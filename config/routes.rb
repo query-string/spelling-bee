@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root "words#index"
+  resources :lists, only: %i[index show]
+  root "lists#index"
 end

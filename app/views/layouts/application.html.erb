@@ -7,9 +7,12 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=<%= ENV['RESPONSIVE_VOICE_KEY'] %>"></script>
   </head>
 
   <body>
+    <h1><%= link_to "Spelling Bee Traier", root_path %></h1>
+    <h2>Hello <%= current_person.name %> (<%= current_person.nickname %>)</h2>
     <%= yield %>
   </body>
 </html>
