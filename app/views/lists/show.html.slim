@@ -1,2 +1,2 @@
 h3 You are passing through #{@list.name} list
-<button onclick="responsiveVoice.speak('#{@word.name}');" type="button" value="Play">Play</button>
+<button onclick='responsiveVoice.speak("#{@word.name}", "#{ENV['RESPONSIVE_VOICE_LANG']}");' type="button" value="Play">Play</button>
