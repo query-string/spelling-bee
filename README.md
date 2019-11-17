@@ -5,3 +5,4 @@
 - [ ] Autoplay once page loaded
 - [ ] Make UX a bit nicer
 - [ ] Machine learning (show words with wrong attempts more often)
+- [ ] Show definitions

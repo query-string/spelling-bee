@@ -3,7 +3,7 @@ h3 You are passing through #{@list.name} list
 
 = form_for @list, method: :put do |f|
 
-  p= f.text_field :name, type: :search, value: nil
+  p= f.text_field :name, type: :search, value: nil, spellcheck: false
   p= f.submit "Try"
 
   = f.hidden_field :word_id, value: @word.id
