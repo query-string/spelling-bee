@@ -1,24 +1,7 @@
-# README
+# TODO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [ ] Prevent autosuggestion
+- [ ] Have a profile page with a list of success/fail attempts
+- [ ] Autoplay once page loaded
+- [ ] Make UX a bit nicer
+- [ ] Machine learning (show words with wrong attempts more often)
