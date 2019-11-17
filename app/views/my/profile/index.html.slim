@@ -1,0 +1,23 @@
+h3 Your attempts history (#{pluralize @attempts.count, "attempt"} so far)
+
+table width="100%"
+  tr
+    td Word
+    td Input
+    td Result
+    td Date
+
+  - @attempts.each do |attempt|
+    tr
+      td
+        b= attempt.word.name
+
+      td= attempt.input
+
+      td
+        - if attempt.status == "success"
+          span ✅
+        - else
+          span ❌
+
+      td= attempt.created_at

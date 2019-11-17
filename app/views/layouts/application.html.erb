@@ -12,7 +12,9 @@
 
   <body>
     <h1><%= link_to "Spelling Bee Trainer", root_path %></h1>
-    <h2>Hello <%= current_person.name %> (<%= current_person.nickname %>)</h2>
+    <h2>
+      Hello <%= current_person.name %> (<%= link_to current_person.nickname, my_profile_index_path %>)
+    </h2>
     <%= render "flash_messages", flash: flash %>
 
     <%= yield %>
