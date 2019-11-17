@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :lists, only: %i[index show]
+  resources :lists, only: %i[index show update]
   root "lists#index"
 end
