@@ -5,7 +5,8 @@
 - [x] Have a profile page with a list of success/fail attempts
 - [x] Upload to Heroku
 - [x] Autofocus on the input
-- [ ] Group attempts by date / word
+- [x] Group attempts by date / word
+- [ ] Words proficiency system
 - [ ] Make UX a bit nicer
 - [ ] More readable attempt feedback
 - [ ] Show definitions
