@@ -1,5 +1,25 @@
 h2 Words proficiency
 
+table width="100%"
+  tr
+    td width="33%" Positive
+    td width="33%" Neutral
+    td width="33%" Negative
+
+  tr valign="top"
+    td
+      ul style="color: green;"
+        - @positive.each do |proficiency|
+          li #{proficiency.word.name} – #{pluralize(proficiency.attempts_count, "attempt")}
+    td
+      ul style="color: gray;"
+        - @neutral.each do |proficiency|
+          li #{proficiency.word.name} – #{pluralize(proficiency.attempts_count, "attempt")}
+    td
+      ul style="color: red;"
+        - @negative.each do |proficiency|
+          li #{proficiency.word.name} – #{pluralize(proficiency.attempts_count, "attempt")}
+
 h2 Full attempts history
 
 - @attempts.date_groupped.each do |(date, attempts)|
