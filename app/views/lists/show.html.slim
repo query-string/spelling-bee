@@ -1,7 +1,5 @@
 h3 You are passing through #{@list.name} list
 
-<button onclick='pronounce()' type="button" value="Play">Play</button>
-
 = form_for @list, method: :put do |f|
 
   p
@@ -12,9 +10,10 @@ h3 You are passing through #{@list.name} list
       autocorrect: :off,
       autocapitalize: :off,
       spellcheck: false,
-      data: { word: "#{@word.name}", voice: "#{ENV['RESPONSIVE_VOICE_LANG']}" }
+      data:  { word: "#{@word.name}", voice: "#{ENV['RESPONSIVE_VOICE_LANG']}" }
 
   p
+    = f.button "Play again", onclick: "pronounce()"
     = f.submit "Try"
 
   = f.hidden_field :word_id, value: @word.id
