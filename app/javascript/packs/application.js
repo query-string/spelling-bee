@@ -15,3 +15,19 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+document.addEventListener("DOMContentLoaded",function(){
+  pronounce()
+});
+
+window.pronounce = function() {
+  let el = document.getElementById("list_name")
+
+  if (el != undefined) {
+    let word  = el.dataset.word
+    let voice = el.dataset.voice
+
+    el.focus()
+    responsiveVoice.speak(word, voice)
+  }
+}
