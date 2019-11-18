@@ -12,4 +12,5 @@
 - [ ] More readable attempt feedback
 - [ ] Satisfying sound when answers correct
 - [ ] Words proficiency selection
+- [ ] Be able to pronounce each word on the proficiency log page
 - [ ] Show definitions
