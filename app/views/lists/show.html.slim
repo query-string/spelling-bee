@@ -13,7 +13,7 @@ h3 You are passing through #{@list.name} list
       data:  { word: "#{@word.name}", voice: "#{ENV['RESPONSIVE_VOICE_LANG']}" }
 
   p
-    = f.button "Play again", onclick: "pronounce()"
+    = f.button "Play again", onclick: "pronounce(); return false;"
     = f.submit "Try"
 
   = f.hidden_field :word_id, value: @word.id
