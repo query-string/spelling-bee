@@ -9,4 +9,5 @@
 - [ ] Words proficiency system
 - [ ] Make UX a bit nicer
 - [ ] More readable attempt feedback
+- [ ] Satisfying sound when answers correct
 - [ ] Show definitions
