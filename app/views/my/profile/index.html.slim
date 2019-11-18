@@ -1,23 +1,27 @@
-h3 Your attempts history (#{pluralize @attempts.count, "attempt"} so far)
+h3 Your attempts history
 
-table width="100%"
-  tr
-    td Word
-    td Input
-    td Result
-    td Date
+- @attempts.date_groupped.each do |(date, attempts)|
 
-  - @attempts.each do |attempt|
+  h4 #{date.to_date} (#{pluralize(attempts.count, "attempt")} this day)
+
+  table width="100%"
     tr
-      td
-        b= attempt.word.name
+      td width="25%" Word
+      td width="25%" Input
+      td Result
+      td Time
 
-      td= attempt.input
+    - attempts.each do |attempt|
+      tr
+        td
+          b= attempt.word.name
 
-      td
-        - if attempt.status == "success"
-          span ✅
-        - else
-          span ❌
+        td= attempt.input
 
-      td= attempt.created_at
+        td
+          - if attempt.status == "success"
+            span ✅
+          - else
+            span ❌
+
+        td= attempt.created_at
