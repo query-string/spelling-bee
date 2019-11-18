@@ -6,8 +6,10 @@
 - [x] Upload to Heroku
 - [x] Autofocus on the input
 - [x] Group attempts by date / word
-- [ ] Words proficiency system
+- [x] Words proficiency logging
+- [ ] Remove whitespaces from the input
 - [ ] Make UX a bit nicer
 - [ ] More readable attempt feedback
 - [ ] Satisfying sound when answers correct
+- [ ] Words proficiency selection
 - [ ] Show definitions
