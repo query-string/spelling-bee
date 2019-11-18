@@ -11,7 +11,7 @@ h3 Your attempts history
       td Result
       td Time
 
-    - attempts.each do |attempt|
+    - attempts.reverse.each do |attempt|
       tr
         td
           b= attempt.word.name
