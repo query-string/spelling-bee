@@ -9,9 +9,9 @@ class ListsController < ApplicationController
 
   def update
     @correct_word = list.words.find(list_params[:word_id])
-    @input_word   = list_params[:name]
+    @input_word   = list_params[:name].downcase.strip
 
-    attempt = if @input_word.downcase == @correct_word.name.downcase
+    attempt = if @input_word == @correct_word.name.downcase
       { status: :success, message: "Good job #{current_person.nickname}, your spelling of the word «#{@correct_word.name}» is correct" }
     else
       { status: :fail, message: "Sorry #{current_person.nickname}, your splelling of the word «#{@correct_word.name}» is wrong. Try again later?" }
