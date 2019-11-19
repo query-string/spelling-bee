@@ -18,7 +18,7 @@ import "../css/font-awesome.scss"
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("turbolinks:load", function() {
   pronounce()
 });
 

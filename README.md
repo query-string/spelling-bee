@@ -9,7 +9,7 @@
 - [x] Autofocus on the input
 - [x] Group attempts by date / word
 - [x] Words proficiency logging
-- [ ] Catch turbolinks loading event
+- [x] Catch turbolinks loading event
 - [ ] Remove whitespaces from the input and don't let to send until filled
 - [ ] Words proficiency selection (rename controller to Proficiency?)
 - [ ] Make UX a bit nicer
