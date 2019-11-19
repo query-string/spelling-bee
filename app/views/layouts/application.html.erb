@@ -12,12 +12,17 @@
   </head>
 
   <body>
-    <h1><%= link_to "Spelling Bee Trainer", root_path %></h1>
-    <h2>
-      Hello <%= current_person.name %> (<%= link_to current_person.nickname, my_profile_index_path %>)
-    </h2>
-    <%= render "flash_messages", flash: flash %>
+    <div class="p-5 text-center text-3xl text-white bg-yellow-500 border-orange-600 border-b-4">
+      <h1><%= link_to "Spelling Bee Trainer", root_path %></h1>
+    </div>
 
-    <%= yield %>
+    <div class="p-10">
+      <h2>
+        Hello <%= current_person.name %> (<%= link_to current_person.nickname, my_profile_index_path %>)
+      </h2>
+      <%= render "flash_messages", flash: flash %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
