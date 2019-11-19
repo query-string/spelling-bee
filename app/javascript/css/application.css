@@ -1,3 +1,16 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.links-blue a {
+  @apply text-blue-500 underline;
+}
+.container {
+  @apply w-full max-w-xl mx-auto;
+}
+.headline {
+  @apply text-2xl font-bold mb-5;
+}
+.subhead {
+  @apply text-2xl mb-2;
+}
