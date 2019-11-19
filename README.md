@@ -10,9 +10,9 @@
 - [x] Group attempts by date / word
 - [x] Words proficiency logging
 - [x] Catch turbolinks loading event
-- [ ] Remove whitespaces from the input and don't let to send until filled
-- [ ] Words proficiency selection (rename controller to Proficiency?)
-- [ ] Make UX a bit nicer
+- [x] Remove whitespaces from the input and don't let to send until filled
+- [x] Words proficiency selection (rename controller to Proficiency?)
+- [x] Make UX a bit nicer
 - [ ] More readable attempts feedback
 - [ ] Show definitions
 - [ ] Show attempts log per word (feels to be more valuable rather than general log)

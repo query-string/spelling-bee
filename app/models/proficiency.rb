@@ -1,4 +1,6 @@
 class Proficiency < ApplicationRecord
+  LEVELS = %i[random positive neutral negative]
+
   belongs_to :person
   belongs_to :word
 

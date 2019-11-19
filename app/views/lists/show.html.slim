@@ -15,10 +15,13 @@
           data:  { word: "#{@word.name}", voice: "#{ENV['RESPONSIVE_VOICE_LANG']}" },
           class: "bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg text-2xl text-center py-2 px-4 mb-5 block w-full appearance-none leading-normal"
 
-      p
-        = f.submit "Try it", class: "button hover:bg-blue-500 hover:text-white hover:border-transparent mr-5"
-        = link_to "#", onclick: "pronounce(); return false;" do
-          i.fas.fa-volume-up
-          span.ml-2 Say it again?
+      .flex
+        .text-left class="w-1/2"
+          = f.submit "Try it", class: "button hover:bg-blue-500 hover:text-white hover:border-transparent mr-5"
+          = link_to "#", onclick: "pronounce(); return false;" do
+            i.fas.fa-volume-up
+            i.ml-2 Say it again?
+        .text-right class="w-1/2"
+          p.mt-3= select_tag :proficiency_level, options_for_select(@levels, current_person.proficiency_level), prompt: "Proficiency level"
 
       = f.hidden_field :word_id, value: @word.id

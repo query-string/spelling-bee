@@ -4,10 +4,13 @@ class ListsController < ApplicationController
   end
 
   def show
-    @word = list.words.sample
+    @levels = Proficiency::LEVELS
+    @word = list.words.send(current_person.proficiency_level, current_person).sample
   end
 
   def update
+    current_person.update(proficiency_level: params[:proficiency_level])
+
     @correct_word = list.words.find(list_params[:word_id])
     @input_word   = list_params[:name].downcase.strip
 
@@ -17,7 +20,7 @@ class ListsController < ApplicationController
       { status: :fail, message: "Sorry #{current_person.nickname}, your splelling of the word «#{@correct_word.name}» is wrong. Try again later?" }
     end
 
-    p @correct_word.attempts.create(person_id: current_person.id, status: attempt[:status], input: @input_word)
+    @correct_word.attempts.create(person_id: current_person.id, status: attempt[:status], input: @input_word)
 
     redirect_to list_path(list), flash: { notice: attempt[:message] }
   end

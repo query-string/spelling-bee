@@ -3,6 +3,11 @@ class Word < ApplicationRecord
   has_many :attempts
   has_many :proficiencies
 
+  scope :random,   ->(person) { all }
+  scope :positive, ->(person) { where("id in (?)", person.proficiencies.positive.pluck(:word_id)) }
+  scope :neutral,  ->(person) { where("id in (?)", person.proficiencies.neutral.pluck(:word_id)) }
+  scope :negative, ->(person) { where("id in (?)", person.proficiencies.negative.pluck(:word_id)) }
+
   def calculate_level_of(person)
     attempts ||= person.attempts.where(word_id: id)
     { attempts: attempts.count, success: attempts.success.count, fail: attempts.fail.count }
