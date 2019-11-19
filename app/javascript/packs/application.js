@@ -31,5 +31,13 @@ window.pronounce = function() {
 
     el.focus()
     responsiveVoice.speak(word, voice)
+
+    let form = document.getElementById("list_form")
+    form.onsubmit = function() {
+      if (el.value == "") {
+        responsiveVoice.speak(word, voice)
+        return false
+      }
+    }
   }
 }
