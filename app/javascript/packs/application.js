@@ -37,7 +37,29 @@ window.pronounce = function() {
       if (el.value == "") {
         responsiveVoice.speak(word, voice)
         return false
+      } else {
+        spell(word, voice)
+        return false
       }
     }
   }
+}
+
+async function spell(word, voice) {
+  let letters = word.split('')
+  let form    = document.getElementById("list_form")
+
+  for (let i = 0; i < letters.length; i++) {
+    responsiveVoice.speak(letters[i], voice)
+    await sleep(1000)
+  }
+
+  responsiveVoice.speak(word, voice)
+  await sleep(1500)
+
+  form.submit()
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }

@@ -13,6 +13,9 @@
 - [x] Remove whitespaces from the input and don't let to send until filled
 - [x] Words proficiency selection (rename controller to Proficiency?)
 - [x] Make UX a bit nicer
+- [x] Pronounce words letter by letter after submission
+- [ ] Pick less oftenly used words first
+- [ ] Update proficciency level automatically ocne list exceeded
 - [ ] More readable attempts feedback
 - [ ] Show definitions
 - [ ] Show attempts log per word (feels to be more valuable rather than general log)

@@ -12,7 +12,7 @@
           autocorrect: :off,
           autocapitalize: :off,
           spellcheck: false,
-          data:  { word: "#{@word.name}", voice: "#{ENV['RESPONSIVE_VOICE_LANG']}" },
+          data:  { word: "#{@word.name.downcase}", voice: "#{ENV['RESPONSIVE_VOICE_LANG']}" },
           class: "bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg text-2xl text-center py-2 px-4 mb-5 block w-full appearance-none leading-normal"
 
       .flex
