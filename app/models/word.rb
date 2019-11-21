@@ -3,10 +3,16 @@ class Word < ApplicationRecord
   has_many :attempts
   has_many :proficiencies
 
-  scope :random,   ->(person) { all }
+  scope :random,   ->(person) { minimal_attempts person }
   scope :positive, ->(person) { where("id in (?)", person.proficiencies.positive.pluck(:word_id)) }
   scope :neutral,  ->(person) { where("id in (?)", person.proficiencies.neutral.pluck(:word_id)) }
   scope :negative, ->(person) { where("id in (?)", person.proficiencies.negative.pluck(:word_id)) }
+
+  scope :minimal_attempts, ->(person) {
+    proficiency     = Proficiency.for_person(person)
+    attempted_words = proficiency.where(attempts_count: proficiency.minimum(:attempts_count))
+    where(id: attempted_words.pluck(:word_id))
+  }
 
   def definitions
     url = "https://www.dictionaryapi.com/api/v3/references/sd4/json/#{name}?key=#{ENV['DICTIONARY_API_KEY']}"

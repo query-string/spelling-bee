@@ -15,7 +15,7 @@
 - [x] Make UX a bit nicer
 - [x] Pronounce words letter by letter after submission
 - [x] Show definitions
-- [ ] Pick less oftenly used words first
+- [x] Pick less often used words first
 - [ ] A bit of refactoring for word scopes
 - [ ] Be able to pick the most failing ones
 - [ ] Update proficciency level automatically ocne list exceeded
