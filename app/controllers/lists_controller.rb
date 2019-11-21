@@ -9,6 +9,7 @@ class ListsController < ApplicationController
     words = list.words.send(current_person.proficiency_level, current_person)
     words = list.words.random(current_person) if words.empty?
     @word = words.sample
+    @definitions = @word.definitions
   end
 
   def update

@@ -2,7 +2,14 @@
   h2.headline You are passing through #{@list.name} list
 
   .container.mt-10
-    = form_for @list, method: :put, html: { id: "list_form" } do |f|
+    - @definitions.any?
+      .text-left.text-sm.text-gray-500
+        strong Definition
+        ul.list-disc.italic
+          - @definitions.each do |definition|
+            li= definition.capitalize
+
+    = form_for @list, method: :put, html: { id: "list_form", class: "mt-10" } do |f|
 
       p
         = f.text_field :name,
