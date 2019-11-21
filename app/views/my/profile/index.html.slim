@@ -23,30 +23,28 @@ table width="100%"
         - @negative.each do |proficiency|
           li #{proficiency.word.name} – #{pluralize(proficiency.attempts_count, "attempt")}
 
-h2 Full attempts history
+.mt-10
+  h2.headline Attempts today
 
-- @attempts.date_groupped.each do |(date, attempts)|
+  - if @attempts.empty?
 
-  h4 #{date.to_date} (#{pluralize(attempts.count, "attempt")} this day)
+    p No attempts today :'(
 
-  table width="100%"
-    tr
-      td width="25%" Word
-      td width="25%" Input
-      td Result
-      td Time
+  - else
 
-    - attempts.reverse.each do |attempt|
-      tr
-        td
-          b= attempt.word.name
+    table width="100%"
 
-        td= attempt.input
+      - @attempts.each do |attempt|
+        tr
+          td
+            b= attempt.word.name
 
-        td
-          - if attempt.status == "success"
-            span ✅
-          - else
-            span ❌
+          td= attempt.input
 
-        td= attempt.created_at
+          td
+            - if attempt.status == "success"
+              span ✅
+            - else
+              span ❌
+
+          td= attempt.created_at
