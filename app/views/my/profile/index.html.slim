@@ -24,7 +24,7 @@ table width="100%"
           li #{proficiency.word.name} – #{pluralize(proficiency.attempts_count, "attempt")}
 
 .mt-10
-  h2.headline Attempts today
+  h2.headline Attempts today – #{@attempts.count}
 
   - if @attempts.empty?
 
