@@ -16,7 +16,7 @@
 - [x] Pronounce words letter by letter after submission
 - [x] Show definitions
 - [x] Pick less often used words first
-- [ ] A bit of refactoring for word scopes
+- [x] A bit of refactoring for word scopes
 - [ ] Be able to pick the most failing ones
 - [ ] Update proficciency level automatically ocne list exceeded
 - [ ] More readable attempts feedback

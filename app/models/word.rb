@@ -3,13 +3,13 @@ class Word < ApplicationRecord
   has_many :attempts
   has_many :proficiencies
 
-  scope :random,   ->(person) { minimal_attempts person }
-  scope :positive, ->(person) { where("id in (?)", person.proficiencies.positive.pluck(:word_id)) }
-  scope :neutral,  ->(person) { where("id in (?)", person.proficiencies.neutral.pluck(:word_id)) }
-  scope :negative, ->(person) { where("id in (?)", person.proficiencies.negative.pluck(:word_id)) }
+  scope :random,   ->(person) { minimal_attempts_number person }
+  scope :positive, ->(person) { minimal_attempts_number person, :positive }
+  scope :neutral,  ->(person) { minimal_attempts_number person, :neutral }
+  scope :negative, ->(person) { minimal_attempts_number person, :negative }
 
-  scope :minimal_attempts, ->(person) {
-    proficiency     = Proficiency.for_person(person)
+  scope :minimal_attempts_number, ->(person, scope = :all) {
+    proficiency     = person.proficiencies.send(scope)
     attempted_words = proficiency.where(attempts_count: proficiency.minimum(:attempts_count))
     where(id: attempted_words.pluck(:word_id))
   }
