@@ -1,0 +1,30 @@
+h2.headline Words proficiency
+
+table width="100%"
+  tr
+    td width="33%"
+      h3.subhead 👍 Positive: #{@positive.length}
+    td width="33%"
+      h3.subhead 🤷 Neutral #{@neutral.length}
+    td width="33%"
+      h3.subhead 🤦 Negative #{@negative.length}
+
+  tr valign="top"
+    - { green: @positive, gray: @neutral, red: @negative }.each do |color, level|
+      td class="text-#{color}-600"
+        ul
+          - level.each do |proficiency|
+            li #{proficiency.word.name} – #{link_to(pluralize(proficiency.attempts_count, "attempt"), my_word_path(proficiency.word), class: "underline")}
+
+.mt-10
+  h2.headline Attempts today – #{@attempts.count}
+
+  - if @attempts.empty?
+
+    p No attempts today :'(
+
+  - else
+
+    table width="100%"
+      - @attempts.each do |attempt|
+        = render "attempt", attempt: attemmpt

@@ -17,12 +17,11 @@
         <i class="fas fa-trophy text-orange-600"></i>
         <%= link_to "Spelling Bee Trainer", root_path %>
       </h1>
-      Hello, <%= current_person.name %> (<%= link_to "aka #{current_person.nickname}", my_profile_index_path, class: "underline" %>)
+      Hello, <%= current_person.name %> (<%= link_to "aka #{current_person.nickname}", my_words_path, class: "underline" %>)
     </div>
 
-    <div class="p-10 links-blue">
+    <div class="p-10">
       <%= render "flash_messages", flash: flash %>
-
       <%= yield %>
     </div>
   </body>

@@ -1,0 +1,13 @@
+tr
+  td
+    b= attempt.word.name
+
+  td= attempt.input
+
+  td
+    - if attempt.status == "success"
+      span ✅
+    - else
+      span ❌
+
+  td= attempt.created_at

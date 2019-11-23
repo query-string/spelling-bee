@@ -1,0 +1,6 @@
+h2.headline Words proficiency
+h3.subhead= @word.name
+
+table width="100%"
+  - @attempts.each do |attempt|
+    = render "attempt", attempt: attempt
