@@ -3,4 +3,4 @@ h2.headline You have #{pluralize(@lists.length, "list")} for your preps
 - if @lists.any?
   ul
     - @lists.each do |list|
-      li= link_to list.name, list
+      li= link_to list.name, new_list_attempt_path(list)
