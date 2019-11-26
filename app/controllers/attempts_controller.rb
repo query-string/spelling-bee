@@ -1,9 +1,11 @@
 class AttemptsController < ApplicationController
+  before_action :fetch_list
+
   def new
     @levels = Proficiency::LEVELS
 
-    words = list.words.send(current_person.proficiency_level, current_person)
-    words = list.words.random(current_person) if words.empty?
+    words = @list.words.send(current_person.proficiency_level, current_person)
+    words = @list.words.random(current_person) if words.empty?
     @word = words.sample
     @definitions = @word.definitions
   end
@@ -11,7 +13,7 @@ class AttemptsController < ApplicationController
   def create
     current_person.update(proficiency_level: params[:proficiency_level])
 
-    @correct_word = list.words.find(list_params[:word_id])
+    @correct_word = @list.words.find(list_params[:word_id])
     @input_word   = list_params[:name].downcase.strip
 
     attempt = if @input_word == @correct_word.name.downcase
@@ -22,7 +24,7 @@ class AttemptsController < ApplicationController
 
     @correct_word.attempts.create(person_id: current_person.id, status: attempt[:status], input: @input_word)
 
-    redirect_to list_path(list), flash: { notice: attempt[:message] }
+    redirect_to new_list_attempt_path(@list), flash: { notice: attempt[:message] }
   end
 
   private
@@ -31,7 +33,7 @@ class AttemptsController < ApplicationController
     params.require(:list).permit(:name, :word_id)
   end
 
-  def list
-    @list = List.find(params[:list_id])
+  def fetch_list
+    @list ||= List.find(params[:list_id])
   end
 end

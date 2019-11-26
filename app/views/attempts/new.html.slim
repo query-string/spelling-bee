@@ -9,7 +9,7 @@
           - @definitions.each do |definition|
             li= definition.capitalize
 
-    = form_for @list, method: :put, html: { id: "list_form", class: "mt-10" } do |f|
+    = form_for @list, url: list_attempts_path(@list), method: :post, html: { id: "list_form", class: "mt-10" } do |f|
 
       p
         = f.text_field :name,
