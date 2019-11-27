@@ -1,0 +1,8 @@
+.text-center
+  h2.headline= @attempt.word.name.upcase
+
+  .m-10
+    p Your anser
+    h3.subhead #{@attempt.input}
+
+  = link_to "Next try", new_list_attempt_path(params[:list_id]), class: "button hover:bg-blue-500 hover:text-white hover:border-transparent"

@@ -17,9 +17,9 @@
 - [x] Show definitions
 - [x] Pick less often used words first
 - [x] A bit of refactoring for word scopes
-- [ ] Show attempts log per word (feels to be more valuable rather than general log)
-- [ ] Be able to pronounce each word on the proficiency log page
+- [x] Show attempts log per word (feels to be more valuable rather than general log)
 - [ ] More readable attempts feedback
+- [ ] Be able to pronounce each word on the proficiency log page
 - [ ] Satisfying sound when answers correct
 - [ ] Update proficciency level automatically ocne list exceeded
 - [ ] Change proficiency level immediately in the menu

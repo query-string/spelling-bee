@@ -16,15 +16,19 @@ class AttemptsController < ApplicationController
     @correct_word = @list.words.find(list_params[:word_id])
     @input_word   = list_params[:name].downcase.strip
 
-    attempt = if @input_word == @correct_word.name.downcase
+    result = if @input_word == @correct_word.name.downcase
       { status: :success, message: "Good job #{current_person.nickname}, your spelling of the word «#{@correct_word.name}» is correct" }
     else
       { status: :fail, message: "Sorry #{current_person.nickname}, your splelling of the word «#{@correct_word.name}» is wrong. Try again later?" }
     end
 
-    @correct_word.attempts.create(person_id: current_person.id, status: attempt[:status], input: @input_word)
+    attempt = @correct_word.attempts.create(person_id: current_person.id, status: result[:status], input: @input_word)
 
-    redirect_to new_list_attempt_path(@list), flash: { notice: attempt[:message] }
+    redirect_to list_attempt_path(@list, attempt), flash: { notice: result[:message] }
+  end
+
+  def show
+    @attempt = Attempt.find(params[:id])
   end
 
   private
