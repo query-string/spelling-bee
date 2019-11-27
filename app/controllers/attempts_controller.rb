@@ -24,7 +24,7 @@ class AttemptsController < ApplicationController
 
     attempt = @correct_word.attempts.create(person_id: current_person.id, status: result[:status], input: @input_word)
 
-    redirect_to list_attempt_path(@list, attempt), flash: { notice: result[:message] }
+    redirect_to list_attempt_path(@list, attempt), flash: { "#{result[:status] == :success ? :notice : :alert}" => result[:message] }
   end
 
   def show
