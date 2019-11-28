@@ -14,4 +14,16 @@ class Attempt < ApplicationRecord
   def update_proficiency
     word.update_proficiency_of(person)
   end
+
+  def compare
+    expectation = word.name.downcase
+    answer      = input.downcase
+    expectation.chars.map.with_index do |letter, index|
+      {
+        expectation: letter,
+        answer: answer[index],
+        state: letter == answer[index]
+      }
+    end
+  end
 end

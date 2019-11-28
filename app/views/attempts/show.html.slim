@@ -3,6 +3,8 @@
 
   .m-10
     p Your anser
-    h3.subhead #{@attempt.input}
+    h3.subhead
+      - @attempt.compare.each do |letter|
+        span class="#{letter[:state] ? "text-black" : "text-red-600"}"= letter[:answer]
 
   = link_to "Try again", new_list_attempt_path(params[:list_id]), class: "button hover:bg-blue-500 hover:text-white hover:border-transparent"
