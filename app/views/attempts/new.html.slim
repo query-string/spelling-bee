@@ -29,6 +29,6 @@
             i.fas.fa-volume-up
             i.ml-2 Say it again?
         .text-right class="w-1/2"
-          p.mt-3= select_tag :proficiency_level, options_for_select(@levels, current_person.proficiency_level), prompt: "Proficiency level"
+          p.mt-3= select_tag :proficiency_level, options_for_select(@levels, current_person.proficiency_level), prompt: "Proficiency level", data: { path: my_words_path }
 
       = f.hidden_field :word_id, value: @word.id

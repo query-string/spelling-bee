@@ -20,6 +20,7 @@ import "../css/font-awesome.scss"
 
 document.addEventListener("turbolinks:load", function() {
   pronounce()
+  proficiency_change()
 });
 
 window.pronounce = function() {
@@ -42,6 +43,30 @@ window.pronounce = function() {
         return false
       }
     }
+  }
+}
+
+window.proficiency_change = function() {
+  let el = document.getElementById("proficiency_level")
+
+  if (el != undefined) {
+    let path  = el.dataset.path
+
+    el.addEventListener("change", function() {
+      const url = path + "/" + this.value
+      const options = {
+        method: "PUT",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json;charset=UTF-8"
+        }
+      }
+
+      fetch(url, options)
+        .then(response => {
+          location.reload()
+        })
+    })
   }
 }
 

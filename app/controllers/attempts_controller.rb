@@ -11,8 +11,6 @@ class AttemptsController < ApplicationController
   end
 
   def create
-    current_person.update(proficiency_level: params[:proficiency_level])
-
     @correct_word = @list.words.find(list_params[:word_id])
     @input_word   = list_params[:name].downcase.strip
 

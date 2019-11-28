@@ -22,8 +22,9 @@
 - [ ] Be able to pronounce each word on the proficiency log page
 - [ ] Satisfying sound when answers correct
 - [ ] Update proficciency level automatically ocne list exceeded
-- [ ] Change proficiency level immediately in the menu
+- [x] Change proficiency level immediately in the menu
 - [ ] Be able to select voice/speed
+- [ ] Make sure definitions API returns something, add some caching level
 
 ## NICE TO HAVE IN PUBLIC
 
