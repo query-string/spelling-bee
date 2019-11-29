@@ -21,7 +21,7 @@
 - [x] More readable attempts feedback
 - [x] Be able to pronounce each word on the proficiency log page
 - [x] Change proficiency level immediately in the menu
-- [ ] Make sure definitions API returns something, add some caching level
+- [x] Make sure definitions API returns something, add some caching level
 - [ ] Anonymous usage
 - [ ] Update proficciency level automatically ocne list exceeded
 - [ ] Satisfying sound when answers correct

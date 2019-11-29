@@ -14,8 +14,9 @@ class Word < ApplicationRecord
     where(id: attempted_words.pluck(:word_id))
   }
 
-  def definitions
-    DinctionaryService.(name)
+  def fetch_definitions
+    update(definitions: DinctionaryService.(name)) if definitions.empty?
+    definitions
   end
 
   def calculate_level_of(person)
