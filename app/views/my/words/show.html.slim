@@ -1,5 +1,7 @@
 h2.headline Words proficiency
-h3.subhead= @word.name
+h3.subhead
+  i.fas.fa-volume-up.mr-2.cursor-pointer onclick="responsiveVoice.speak('#{@word.name}', '#{ENV['RESPONSIVE_VOICE_LANG']}');"
+  = @word.name
 
 table width="100%"
   - @attempts.each do |attempt|

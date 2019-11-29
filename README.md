@@ -19,7 +19,7 @@
 - [x] A bit of refactoring for word scopes
 - [x] Show attempts log per word (feels to be more valuable rather than general log)
 - [x] More readable attempts feedback
-- [ ] Be able to pronounce each word on the proficiency log page
+- [x] Be able to pronounce each word on the proficiency log page
 - [ ] Satisfying sound when answers correct
 - [ ] Update proficciency level automatically ocne list exceeded
 - [x] Change proficiency level immediately in the menu
