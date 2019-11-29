@@ -15,9 +15,7 @@ class Word < ApplicationRecord
   }
 
   def definitions
-    url = "https://www.dictionaryapi.com/api/v3/references/sd4/json/#{name}?key=#{ENV['DICTIONARY_API_KEY']}"
-    response = HTTParty.get(url)
-    response.parsed_response[0]["shortdef"]
+    DinctionaryService.(name)
   end
 
   def calculate_level_of(person)

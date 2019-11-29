@@ -20,11 +20,13 @@
 - [x] Show attempts log per word (feels to be more valuable rather than general log)
 - [x] More readable attempts feedback
 - [x] Be able to pronounce each word on the proficiency log page
-- [ ] Satisfying sound when answers correct
-- [ ] Update proficciency level automatically ocne list exceeded
 - [x] Change proficiency level immediately in the menu
-- [ ] Be able to select voice/speed
 - [ ] Make sure definitions API returns something, add some caching level
+- [ ] Anonymous usage
+- [ ] Update proficciency level automatically ocne list exceeded
+- [ ] Satisfying sound when answers correct
+- [ ] Be able to select voice/speed
+
 
 ## NICE TO HAVE IN PUBLIC
 
