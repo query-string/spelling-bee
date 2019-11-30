@@ -23,6 +23,7 @@
 - [x] Change proficiency level immediately in the menu
 - [x] Make sure definitions API returns something, add some caching level
 - [x] Update proficciency level automatically ocne list exceeded
+- [x] Simple landing
 - [ ] Anonymous usage
 - [ ] Satisfying sound when answers correct
 - [ ] Be able to select voice/speed
@@ -30,5 +31,6 @@
 
 ## NICE TO HAVE IN PUBLIC
 
-- [ ] Google auth
+- [ ] Google auth (be able to save anonymous usage progress)
+- [ ] Words to lists association should be many to many
 - [ ] CSV upload
