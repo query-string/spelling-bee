@@ -1,3 +1,11 @@
+# README
+
+I've originally built this app in order to support my daughter with her hard work in preparation for Spelling Bee competition. I'm convinced that the app contributed in the process of structuring her knowledge and subsequently made her feel a bit more confident and a tiny bit less agitated.
+
+Even though it was much fun for both of us (for her – making product requirements, in my case – resolving real customer requests) I barely see her mastering new words in this app again. So I'm leaving this note here in a hope that somebody else will find our product helpful.
+
+At the moment we have only #{link_to "one list", lists_path} with #{pluralize(List.first.words.count, "word")} available for training, but I'm happy to add new lists as required. The applications source is available on #{link_to "GitHub", "http://github.com/query-string/spelling-bee", target: :blank}, feel free to fork and contribute ;)
+
 # TODO
 
 ## POC
