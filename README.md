@@ -1,5 +1,7 @@
 # README
 
+The app is avaliable here http://spelling-bee-trainer.herokuapp.com
+
 I've originally built this app in order to support my daughter with her hard work in preparation for Spelling Bee competition. I'm convinced that the app contributed in the process of structuring her knowledge and subsequently made her feel a bit more confident and a tiny bit less agitated.
 
 Even though it was much fun for both of us (for her – making product requirements, in my case – resolving real customer requests) I barely see her mastering new words in this app again. So I'm leaving this note here in a hope that somebody else will find our product helpful.
